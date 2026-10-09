@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Emanuel Seery — Contenido para negocios</title>
+<meta name="description" content="No te falta alcance. Te falta dónde caer. Bloqueás una jornada al mes para grabar y la cuenta te queda cargada todo el resto. Cabañas, estudios y comercios de San Pedro.">
+<meta name="theme-color" content="#0E0E0E">
+
+<!--
+  ============================================================
+  PROPUESTA 1 · NARANJA          línea: skywardjuridica.com
+  ============================================================
+  Negro casi puro, un solo naranja quemado, Inter en toda la
+  página, estructura AIDA de venta directa. Es la más parecida
+  a las referencias que pasaste, y la más comercial de las tres.
+
+  ATENCIÓN  hero centrado cinematográfico, titular en dos líneas
+  INTERÉS   los casos en carrusel horizontal arrastrable
+  DESEO     el proceso con el título clavado mientras pasan los pasos
+  ACCIÓN    cierre a pantalla completa
+
+  Lo único que NO se copió de la referencia: la garantía numérica
+  del titular ("triplicamos tus honorarios o trabajamos gratis").
+  Emanuel no puede escribir eso. En su lugar va el contraste que sí
+  es suyo y está probado con evidencia propia.
+  ============================================================
+-->
+
+<style>
+/* General Sans (cuerpo) y Cabinet Grotesk (títulos) — mismo estándar que
+   personal.html, cero pedido a Google Fonts ni a Fontshare en producción: los
+   seis archivos ya viven en assets/. Reemplazan a Inter el 2026-09-02, a pedido
+   del usuario. Solo se bajaron los pesos que se usan de verdad. */
+@font-face{
+  font-family:'General Sans';
+  src:url(assets/generalsans-400.woff2) format('woff2');
+  font-weight:400;font-display:swap;
+}
+@font-face{
+  font-family:'General Sans';
+  src:url(assets/generalsans-500.woff2) format('woff2');
+  font-weight:500;font-display:swap;
+}
+@font-face{
+  font-family:'General Sans';
+  src:url(assets/generalsans-600.woff2) format('woff2');
+  font-weight:600;font-display:swap;
+}
+@font-face{
+  font-family:'General Sans';
+  src:url(assets/generalsans-700.woff2) format('woff2');
+  font-weight:700;font-display:swap;
+}
+@font-face{
+  font-family:'Cabinet Grotesk';
+  src:url(assets/cabinetgrotesk-700.woff2) format('woff2');
+  font-weight:700;font-display:swap;
+}
+@font-face{
+  font-family:'Cabinet Grotesk';
+  src:url(assets/cabinetgrotesk-800.woff2) format('woff2');
+  font-weight:800;font-display:swap;
+}
+
+:root{
+  --negro:#0E0E0E;
+  --negro-2:#151515;
+  --negro-3:#1C1C1C;
+  --blanco:#FFFFFF;
+  --hueso:#F5F4F2;
+  --gris:#A2A29E;
+  --gris-2:#8A8A82;  /* #77776F daba 4.28:1 en el pie */
+  --naranja:#FF4D00;
+  --naranja-2:#CC3D00;
+  --linea:rgba(255,255,255,.09);
+  --linea-2:rgba(255,255,255,.16);
+  --sans:'General Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --titulo:'Cabinet Grotesk','General Sans',system-ui,sans-serif;
+  --ancho:1320px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0;background:var(--negro);color:var(--hueso);
+  font-family:var(--sans);font-size:17.5px;line-height:1.6;font-weight:400;
+  letter-spacing:-.011em;-webkit-font-smoothing:antialiased;
+}
+main{overflow-x:hidden;width:100%;max-width:100%}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+::selection{background:var(--naranja);color:#fff}
+
+.env{width:100%;max-width:var(--ancho);margin:0 auto;padding:0 26px;position:relative;z-index:2}
+.env--angosto{max-width:1040px}
+section{padding:150px 0;position:relative}
+/* el nav flota fijo: sin esto, los links de ancla dejan el título tapado */
+section[id]{scroll-margin-top:112px}
+@media(max-width:900px){section{padding:88px 0}}
+
+h1,h2,h3{font-family:var(--titulo);font-weight:800;line-height:1.02;letter-spacing:-.038em;margin:0}
+h1{font-size:clamp(44px,6.1vw,88px)}
+h2{font-size:clamp(34px,4.7vw,64px)}
+h3{font-size:21px;font-weight:700;letter-spacing:-.024em;line-height:1.2}
+p{margin:0 0 18px}p:last-child{margin-bottom:0}
+strong{font-weight:700;color:#fff}
+
+.lead{font-size:clamp(17.5px,1.5vw,20px);color:var(--gris);line-height:1.6;letter-spacing:-.008em}
+
+/* La pregunta que trae el visitante a esa altura del scroll. Va con raya
+   de diálogo porque eso es: lo que él está pensando, no un rótulo de
+   sección. El orden de las secciones sigue el orden de estas preguntas. */
+.pregunta{
+  display:block;font-size:clamp(16px,1.5vw,19px);font-weight:500;
+  color:var(--naranja);letter-spacing:-.016em;margin:0 0 16px;
+}
+.pregunta::before{content:'— ';opacity:.55}
+.medida{max-width:60ch}
+.centro{text-align:center;margin-inline:auto}
+
+/* un solo kicker en toda la página, no uno por sección */
+.kicker{
+  display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:600;
+  letter-spacing:.02em;color:var(--gris);margin:0 0 26px;
+  border:1px solid var(--linea-2);border-radius:100px;padding:8px 16px;
+  background:rgba(255,255,255,.03);backdrop-filter:blur(8px);
+}
+.kicker i{width:7px;height:7px;border-radius:50%;background:var(--naranja);flex:none;display:block}
+
+/* ---------- botones ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:11px;
+  background:var(--naranja);color:#fff;
+  font-size:16.5px;font-weight:600;letter-spacing:-.014em;
+  padding:17px 30px;border-radius:100px;text-decoration:none;min-height:56px;
+  border:1px solid var(--naranja);position:relative;overflow:hidden;
+  transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s,background .25s;
+  /* Medido del botón real de Skyward: rgba(209,63,0,.8) 0 3px 9px más un
+     halo cálido muy tenue. Es naranja OSCURO y corto —hace de sombra
+     proyectada, no de neón—, y por eso el botón se apoya en el fondo en
+     vez de flotar iluminado. */
+  box-shadow:0 4px 12px 0 rgba(180,54,0,.8), 0 0 34px 0 rgba(112,69,54,.22);
+}
+.btn:hover{background:#FF6224;transform:translateY(-2px);
+  box-shadow:0 8px 18px 0 rgba(180,54,0,.85), 0 0 40px 0 rgba(112,69,54,.28)}
+.btn:active{transform:translateY(0)}
+.btn:focus-visible{outline:2px solid var(--blanco);outline-offset:3px}
+.btn--claro{background:var(--blanco);color:#111;border-color:var(--blanco);box-shadow:none}
+.btn--claro:hover{background:#fff;color:#000;transform:translateY(-2px);box-shadow:0 8px 20px 0 rgba(0,0,0,.55)}
+.btn--linea{background:transparent;color:var(--hueso);border-color:var(--linea-2);box-shadow:none}
+.btn--linea:hover{background:rgba(255,255,255,.06);border-color:var(--blanco);color:#fff;transform:translateY(-2px);box-shadow:none}
+.btn--xl{font-size:19px;padding:22px 42px;min-height:68px}
+.btn svg{flex:none}
+
+/* ---------- nav flotante ---------- */
+.nav{position:fixed;top:18px;left:0;right:0;z-index:90;pointer-events:none}
+.nav__in{
+  width:calc(100% - 40px);max-width:1180px;margin:0 auto;pointer-events:auto;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  background:rgba(20,20,20,.7);backdrop-filter:blur(18px) saturate(150%);
+  border:1px solid var(--linea);border-radius:100px;padding:9px 9px 9px 24px;
+  box-shadow:0 20px 50px -22px rgba(0,0,0,.9);
+}
+.marca{display:flex;align-items:center;gap:11px;font-family:var(--titulo);font-weight:800;font-size:16.5px;letter-spacing:-.035em;text-decoration:none;white-space:nowrap}
+.marca i{width:9px;height:9px;border-radius:50%;background:var(--naranja);flex:none;display:block}
+.nav__links{display:flex;gap:28px;font-size:15px;color:var(--gris);font-weight:500}
+.nav__links a{text-decoration:none;transition:color .2s}
+.nav__links a:hover{color:var(--blanco)}
+@media(max-width:980px){.nav__links{display:none}}
+.nav .btn{padding:11px 22px;font-size:15px;min-height:44px;box-shadow:none}
+
+/* ---------- HERO ---------- */
+.hero{
+  min-height:100svh;display:flex;align-items:center;
+  padding:150px 0 110px;text-align:center;position:relative;overflow:hidden;
+}
+.hero__luz{
+  position:absolute;left:50%;top:-16%;width:min(1500px,150vw);aspect-ratio:1.6;
+  transform:translateX(-50%);pointer-events:none;z-index:0;
+  background:radial-gradient(ellipse at 50% 40%,rgba(255,77,0,.20),rgba(255,77,0,.05) 42%,transparent 68%);
+  filter:blur(10px);
+}
+.hero__grano{
+  position:absolute;inset:0;pointer-events:none;z-index:1;opacity:.5;
+  background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.07) 1px,transparent 0);
+  background-size:4px 4px;
+  -webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 35%,#000,transparent 75%);
+  mask-image:radial-gradient(ellipse 80% 60% at 50% 35%,#000,transparent 75%);
+}
+/* 22ch obliga a que el titular corte en DOS líneas y no en seis */
+.hero h1{max-width:22ch;margin:0 auto 30px;text-wrap:balance}
+.hero h1 em{font-style:normal;color:var(--naranja)}
+.hero .lead{max-width:60ch;margin:0 auto}
+.hero__cta{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:42px}
+.hero__nota{margin-top:26px;font-size:14.5px;color:var(--gris-2)}
+
+/* enmascarado para el reveal por líneas de SplitText */
+.linea-mask{overflow:hidden;display:block}
+
+/* ---------- marquesina ---------- */
+.marq{
+  border-top:1px solid var(--linea);border-bottom:1px solid var(--linea);
+  padding:26px 0;overflow:hidden;background:var(--negro-2);position:relative;
+}
+.marq::before,.marq::after{
+  content:'';position:absolute;top:0;bottom:0;width:170px;z-index:3;pointer-events:none;
+}
+.marq::before{left:0;background:linear-gradient(90deg,var(--negro-2),transparent)}
+.marq::after{right:0;background:linear-gradient(270deg,var(--negro-2),transparent)}
+.marq__pista{display:flex;width:max-content;will-change:transform}
+.marq__g{display:flex;align-items:center;gap:56px;padding-right:56px}
+.marq__i{display:inline-flex;align-items:baseline;gap:11px;white-space:nowrap}
+.marq__i b{font-family:var(--titulo);font-size:27px;font-weight:800;letter-spacing:-.035em;color:var(--blanco);font-variant-numeric:tabular-nums}
+.marq__i span{font-size:14.5px;color:var(--gris);font-weight:500}
+.marq__p{width:7px;height:7px;border-radius:50%;background:var(--naranja);flex:none}
+
+/* ---------- carrusel de casos ---------- */
+.carr{position:relative;margin-top:56px}
+.carr__pista{display:flex;gap:22px;width:max-content;padding:0 26px;cursor:grab}
+.carr__pista.arrastrando{cursor:grabbing}
+.caso{
+  width:min(600px,86vw);flex:none;background:var(--blanco);color:#101010;
+  border-radius:24px;padding:38px 36px 34px;position:relative;overflow:hidden;
+  display:flex;flex-direction:column;
+}
+.caso--cta{background:var(--naranja);color:#fff}
+.caso__top{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;margin-bottom:26px}
+.caso__chip{
+  font-size:12.5px;font-weight:600;letter-spacing:.01em;color:#5C5C58;
+  border:1px solid rgba(16,16,16,.16);border-radius:100px;padding:6px 13px;
+}
+.caso--cta .caso__chip{color:rgba(255,255,255,.9);border-color:rgba(255,255,255,.45)}
+.caso__ok{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;color:#0A7A45}
+.caso__ok::before{content:'';width:7px;height:7px;border-radius:50%;background:#0A7A45}
+.caso__nom{font-family:var(--titulo);font-size:clamp(28px,3vw,38px);font-weight:800;letter-spacing:-.04em;line-height:1.04;margin-bottom:8px}
+.caso__sub{font-size:16px;color:#61615C;margin-bottom:26px}
+.caso--cta .caso__sub{color:rgba(255,255,255,.88)}
+.caso h4{
+  font-size:12.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--naranja);margin:24px 0 9px;
+}
+.caso--cta h4{color:#fff}
+.caso p{font-size:16px;color:#3C3C38;margin:0;line-height:1.55}
+.caso--cta p{color:rgba(255,255,255,.94)}
+.caso__entregado{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(16,16,16,.13);
+  border:1px solid rgba(16,16,16,.13);border-radius:14px;overflow:hidden;margin:26px 0 0;
+}
+.caso__e{background:var(--blanco);padding:16px 14px;text-align:center}
+.caso__e b{display:block;font-family:var(--titulo);font-size:26px;font-weight:800;letter-spacing:-.035em;line-height:1;margin-bottom:6px;font-variant-numeric:tabular-nums}
+.caso__e span{font-size:11.5px;color:#6B6B66;line-height:1.35;display:block}
+.caso__aviso{
+  margin-top:22px;padding:15px 17px;background:#F4F1EC;border-radius:12px;
+  font-size:14px;color:#4A4A45;line-height:1.5;
+}
+.caso__aviso b{color:#101010}
+.caso__pie{margin-top:auto;padding-top:26px}
+/* resultado medido: mismo bloque que lo entregado, con el número en naranja
+   para que no se confunda "lo que hice" con "lo que pasó" */
+.caso__entregado--logro .caso__e b{color:var(--naranja)}
+.caso__link{
+  display:inline-flex;align-items:center;gap:7px;margin-top:20px;
+  font-size:15px;font-weight:600;color:#101010;text-decoration:none;
+  border-bottom:2px solid var(--naranja);padding-bottom:2px;
+}
+.caso__link:hover{color:var(--naranja)}
+.carr__ctrl{display:flex;gap:12px;align-items:center;margin-top:30px}
+.carr__b{
+  width:52px;height:52px;border-radius:50%;background:transparent;border:1px solid var(--linea-2);
+  color:var(--hueso);cursor:pointer;display:grid;place-items:center;
+  transition:background .2s,border-color .2s,transform .2s;
+}
+.carr__b:hover{background:rgba(255,255,255,.08);border-color:var(--blanco);transform:translateY(-2px)}
+.carr__b:disabled{opacity:.3;cursor:default;transform:none}
+.carr__b:focus-visible{outline:2px solid var(--naranja);outline-offset:3px}
+.carr__ayuda{font-size:14px;color:var(--gris-2);margin-left:8px}
+
+/* ---------- muestra de edición ----------
+   Cuatro piezas verticales. Arrancan quietas en su cuadro de portada
+   y se reproducen al pasar el mouse; en el celular, cuando entran en
+   pantalla. Sin sonido y en bucle: es una muestra, no un reproductor.
+   Si el archivo no está, la tarjeta lo dice en vez de romperse. */
+.reels{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:56px}
+@media(max-width:1040px){.reels{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.reels{grid-template-columns:1fr;max-width:340px;margin-inline:auto}}
+.reel{margin:0}
+.reel__marco{
+  position:relative;aspect-ratio:9/16;border-radius:20px;overflow:hidden;
+  background:var(--negro-2);border:1px solid var(--linea);
+  transition:transform .5s cubic-bezier(.22,1,.36,1),border-color .4s;
+}
+.reel:hover .reel__marco{transform:translateY(-6px);border-color:var(--linea-2)}
+.reel__v{
+  width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform .7s cubic-bezier(.22,1,.36,1),opacity .3s;
+}
+.reel:hover .reel__v{transform:scale(1.045)}
+.reel.sin-archivo .reel__v{opacity:0}
+.reel__dur{
+  position:absolute;right:12px;top:12px;z-index:3;
+  font-size:12px;font-weight:600;color:#fff;background:rgba(10,10,10,.66);
+  backdrop-filter:blur(6px);border-radius:100px;padding:5px 11px;font-variant-numeric:tabular-nums;
+}
+/* el botón de play que se apaga cuando la pieza corre */
+.reel__play{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3;
+  width:56px;height:56px;border-radius:50%;background:rgba(255,77,0,.92);
+  display:grid;place-items:center;pointer-events:none;
+  transition:opacity .3s,transform .4s cubic-bezier(.22,1,.36,1);
+}
+.reel.corriendo .reel__play,.reel.sin-archivo .reel__play{opacity:0;transform:translate(-50%,-50%) scale(.7)}
+.reel__falta{
+  position:absolute;inset:0;z-index:2;display:none;
+  flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;
+  padding:26px;border-radius:19px;
+  background:repeating-linear-gradient(-45deg,var(--negro-2) 0 10px,#191919 10px 20px);
+  font-size:12.5px;line-height:1.7;color:var(--gris);
+}
+.reel.sin-archivo .reel__falta{display:flex}
+.reel__falta b{color:var(--hueso);font-size:13.5px;font-weight:600;display:block}
+.reel__falta code{font-family:ui-monospace,monospace;font-size:12px;color:var(--naranja)}
+.reel figcaption{padding-top:16px}
+.reel figcaption b{display:block;font-size:16.5px;font-weight:600;letter-spacing:-.02em;margin-bottom:4px}
+.reel figcaption span{font-size:14.5px;color:var(--gris)}
+
+/* lo que se hace en la edición: da sustancia sin depender de los archivos */
+.edicion{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--linea);
+  border:1px solid var(--linea);border-radius:18px;overflow:hidden;margin-top:52px}
+@media(max-width:900px){.edicion{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.edicion{grid-template-columns:1fr}}
+.edicion div{background:var(--negro-2);padding:26px 24px}
+.edicion b{display:block;font-size:16px;font-weight:600;letter-spacing:-.022em;margin-bottom:9px}
+.edicion p{font-size:15px;color:var(--gris);margin:0;line-height:1.5}
+
+/* ---------- acordeón horizontal ----------
+   Cuatro hojas que reparten el ancho: la que se toca se lleva casi
+   tres veces el espacio de las otras y recién ahí muestra el texto.
+   En el celular se apilan y el texto queda siempre visible. */
+.acord{display:flex;gap:14px;height:440px;margin-top:56px}
+@media(max-width:900px){.acord{flex-direction:column;height:auto}}
+.hoja{
+  flex:1;min-width:0;border-radius:20px;background:var(--negro-2);border:1px solid var(--linea);
+  padding:32px 30px;position:relative;overflow:hidden;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  transition:flex .65s cubic-bezier(.22,1,.36,1),background .45s,border-color .45s;
+}
+.hoja:hover,.hoja:focus-within{flex:2.9;background:var(--negro-3);border-color:var(--linea-2)}
+@media(max-width:900px){
+  .hoja{flex:none;transition:background .3s,border-color .3s}
+  .hoja:hover,.hoja:focus-within{flex:none}
+}
+.hoja:focus-visible{outline:2px solid var(--naranja);outline-offset:3px}
+/* la hoja del embudo es la que lleva el naranja a superficie entera */
+.hoja--fuego{background:var(--naranja);border-color:var(--naranja)}
+.hoja--fuego:hover,.hoja--fuego:focus-within{background:#FF6224;border-color:#FF6224}
+.hoja--fuego .hoja__n{color:rgba(255,255,255,.85)}
+.hoja--fuego h3{color:#fff}
+.hoja--fuego p{color:rgba(255,255,255,.94)}
+.hoja__n{
+  font-size:12.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--naranja);margin-bottom:auto;display:block;white-space:nowrap;
+}
+.hoja h3{margin-bottom:12px}
+.hoja p{
+  font-size:16px;color:var(--gris);margin:0;max-width:44ch;
+  opacity:0;transform:translateY(10px);
+  transition:opacity .45s .12s cubic-bezier(.22,1,.36,1),transform .45s .12s cubic-bezier(.22,1,.36,1);
+}
+.hoja:hover p,.hoja:focus-within p{opacity:1;transform:none}
+@media(max-width:900px){.hoja p{opacity:1;transform:none}}
+
+/* ---------- bento sin huecos ---------- */
+.bento{
+  display:grid;grid-template-columns:repeat(6,1fr);gap:14px;grid-auto-flow:dense;
+}
+@media(max-width:1000px){.bento{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.bento{grid-template-columns:1fr}}
+.celda{
+  background:var(--negro-2);border:1px solid var(--linea);border-radius:20px;padding:32px 30px;
+  position:relative;overflow:hidden;transition:background .35s cubic-bezier(.22,1,.36,1),border-color .35s;
+  display:flex;flex-direction:column;justify-content:flex-end;min-height:210px;
+}
+.celda:hover{background:var(--negro-3);border-color:var(--linea-2)}
+.celda h3{margin-bottom:10px}
+.celda p{font-size:16px;color:var(--gris);margin:0;max-width:46ch}
+.celda__n{
+  font-size:12.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--naranja);margin-bottom:auto;padding-bottom:26px;display:block;
+}
+.c2{grid-column:span 2}.c3{grid-column:span 3}.c4{grid-column:span 4}.c6{grid-column:span 6}
+@media(max-width:1000px){.c2,.c3,.c4{grid-column:span 1}.c6{grid-column:span 2}}
+@media(max-width:620px){.c6{grid-column:span 1}}
+/* la celda destacada lleva el naranja a superficie entera */
+.celda--fuego{background:var(--naranja);border-color:var(--naranja)}
+.celda--fuego:hover{background:#FF6224;border-color:#FF6224}
+.celda--fuego .celda__n{color:rgba(255,255,255,.85)}
+.celda--fuego h3,.celda--fuego p{color:#fff}
+.celda--fuego p{color:rgba(255,255,255,.92)}
+
+/* ---------- lecturas ---------- */
+.lecturas{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:54px}
+@media(max-width:860px){.lecturas{grid-template-columns:1fr}}
+.lectura{background:var(--negro-2);border:1px solid var(--linea);border-radius:20px;padding:32px 30px}
+.lectura__n{font-family:var(--titulo);font-size:clamp(40px,5vw,60px);font-weight:800;letter-spacing:-.045em;line-height:1;margin-bottom:14px;font-variant-numeric:tabular-nums}
+.lectura__b{height:4px;border-radius:3px;background:var(--linea-2);margin-bottom:20px;overflow:hidden}
+.lectura__b i{display:block;height:100%;border-radius:3px;transform-origin:left center;transform:scaleX(0)}
+.lectura p{font-size:15.5px;color:var(--gris);margin:0}
+
+/* ---------- párrafo que se revela al scrollear ---------- */
+.manifiesto{
+  font-size:clamp(26px,3.4vw,44px);font-weight:700;letter-spacing:-.035em;line-height:1.2;
+  max-width:19ch;
+}
+.manifiesto .w{opacity:.14;transition:none}
+.manifiesto b{color:var(--naranja);font-weight:700}
+
+/* ---------- proceso con título clavado ---------- */
+.pin{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:start}
+@media(max-width:980px){.pin{grid-template-columns:1fr;gap:36px}}
+.pin__col{position:relative}
+/* Los pasos son filas, no tarjetas: el número grande queda en hueco
+   y se enciende al pasar, y la fila entera se corre con transform.
+   Se anima transform y no padding para no recalcular el layout. */
+.pin__pasos{border-top:1px solid var(--linea)}
+.paso{
+  display:grid;grid-template-columns:110px 1fr;gap:30px;align-items:start;
+  padding:30px 0;border-bottom:1px solid var(--linea);
+  transition:transform .4s cubic-bezier(.22,1,.36,1);
+}
+@media(max-width:760px){.paso{grid-template-columns:66px 1fr;gap:18px;padding:24px 0}}
+.paso:hover{transform:translateX(14px)}
+.paso__n{
+  font-size:clamp(34px,4vw,54px);font-weight:800;letter-spacing:-.055em;line-height:.9;
+  color:transparent;-webkit-text-stroke:1.5px var(--gris-2);font-variant-numeric:tabular-nums;
+  transition:color .35s cubic-bezier(.22,1,.36,1),-webkit-text-stroke-color .35s;
+}
+.paso:hover .paso__n{color:var(--naranja);-webkit-text-stroke-color:var(--naranja)}
+.paso h3{margin-bottom:9px;transition:color .3s}
+.paso:hover h3{color:#fff}
+.paso p{font-size:16px;color:var(--gris);margin:0;max-width:54ch}
+
+/* ---------- reglas ---------- */
+.reglas{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:60px}
+@media(max-width:980px){.reglas{grid-template-columns:1fr 1fr}}
+@media(max-width:580px){.reglas{grid-template-columns:1fr}}
+.regla{background:var(--negro-2);border:1px solid var(--linea);border-radius:18px;padding:28px 26px}
+.regla__t{display:flex;align-items:center;gap:11px;font-size:15.5px;font-weight:700;margin-bottom:12px;letter-spacing:-.02em}
+.regla__t svg{flex:none;color:var(--naranja)}
+.regla p{font-size:15.5px;color:var(--gris);margin:0;line-height:1.5}
+
+/* ---------- dos columnas si/no ---------- */
+.filtro{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:860px){.filtro{grid-template-columns:1fr}}
+.filtro__c{border-radius:22px;padding:36px 34px;border:1px solid var(--linea);background:var(--negro-2)}
+.filtro__c--si{background:var(--blanco);color:#101010;border-color:var(--blanco)}
+.filtro__c h3{margin-bottom:22px;font-size:22px}
+.filtro__c ul{list-style:none;margin:0;padding:0}
+.filtro__c li{padding:13px 0 13px 34px;position:relative;font-size:16.5px;line-height:1.48;border-top:1px solid var(--linea)}
+.filtro__c--si li{border-top-color:rgba(16,16,16,.12);color:#33332F}
+.filtro__c li:first-child{border-top:0}
+.filtro__c li::before{
+  content:'';position:absolute;left:0;top:16px;width:19px;height:19px;border-radius:50%;
+}
+.filtro__c--si li::before{background:var(--naranja);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/%3E%3C/svg%3E") center/19px no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z'/%3E%3C/svg%3E") center/19px no-repeat}
+.filtro__c--no li{color:var(--gris)}
+.filtro__c--no li::before{background:var(--gris-2);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M19 6.4 17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z'/%3E%3C/svg%3E") center/17px no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M19 6.4 17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z'/%3E%3C/svg%3E") center/17px no-repeat}
+
+/* ---------- planes ---------- */
+.planes{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:860px){.planes{grid-template-columns:1fr}}
+.plan{background:var(--negro-2);border:1px solid var(--linea);border-radius:22px;padding:38px 34px;position:relative}
+.plan--destacado{border-color:rgba(255,77,0,.45);background:linear-gradient(180deg,rgba(255,77,0,.09),var(--negro-2) 55%)}
+.plan__t{font-size:12.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--naranja);margin-bottom:16px;display:block}
+.plan h3{font-size:27px;margin-bottom:14px}
+.plan p{font-size:16.5px;color:var(--gris)}
+.plan__clave{margin-top:20px;padding-top:20px;border-top:1px solid var(--linea);font-size:17px;color:#fff;font-weight:600;letter-spacing:-.018em}
+
+/* ---------- faq ---------- */
+.faq{border-top:1px solid var(--linea);margin-top:8px}
+.faq details{border-bottom:1px solid var(--linea)}
+.faq summary{
+  list-style:none;cursor:pointer;padding:28px 56px 28px 0;position:relative;
+  font-size:clamp(19px,2vw,23px);font-weight:600;letter-spacing:-.028em;line-height:1.28;transition:color .2s;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:hover{color:var(--naranja)}
+.faq summary:focus-visible{outline:2px solid var(--naranja);outline-offset:4px}
+.faq summary::after,.faq summary::before{content:'';position:absolute;background:var(--gris);transition:transform .35s cubic-bezier(.22,1,.36,1),background .2s}
+.faq summary::after{right:8px;top:50%;width:17px;height:2px;margin-top:-1px}
+.faq summary::before{right:15.5px;top:50%;width:2px;height:17px;margin-top:-8.5px}
+.faq details[open] summary::before{transform:scaleY(0);background:var(--naranja)}
+.faq details[open] summary::after{background:var(--naranja)}
+.faq details p{padding:0 60px 30px 0;color:var(--gris);font-size:17px;max-width:76ch;margin:0}
+
+/* ---------- bio ---------- */
+.bio{display:grid;grid-template-columns:340px 1fr;gap:60px;align-items:center}
+@media(max-width:900px){.bio{grid-template-columns:1fr;gap:34px}}
+.bio__foto{width:100%;aspect-ratio:1;border-radius:24px;object-fit:cover}
+.bio__ph{
+  display:grid;place-items:center;text-align:center;background:var(--negro-2);
+  border:1px dashed var(--linea-2);font-size:13px;letter-spacing:.06em;color:var(--gris-2);line-height:2.2;
+}
+.cred{margin-top:30px;padding-top:24px;border-top:1px solid var(--linea);font-size:15.5px;color:var(--gris);line-height:1.6}
+.cred b{display:block;font-size:12.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--naranja);margin-bottom:10px}
+
+/* ---------- cierre ---------- */
+.cierre{position:relative;overflow:hidden;text-align:center;padding:170px 0}
+@media(max-width:900px){.cierre{padding:96px 0}}
+.cierre__luz{
+  position:absolute;left:50%;bottom:-52%;width:min(1400px,150vw);aspect-ratio:1.35;
+  transform:translateX(-50%);pointer-events:none;
+  background:radial-gradient(ellipse at 50% 50%,rgba(255,77,0,.26),transparent 62%);
+}
+.cierre h2{max-width:17ch;margin:0 auto 26px;font-size:clamp(38px,6vw,86px)}
+.cierre .lead{max-width:58ch;margin:0 auto 42px}
+
+/* ---------- pie ---------- */
+.pie{border-top:1px solid var(--linea);padding:44px 0;font-size:15px;color:var(--gris-2)}
+.pie__in{display:flex;flex-wrap:wrap;gap:18px 32px;justify-content:space-between;align-items:center;
+  width:100%;max-width:var(--ancho);margin:0 auto;padding:0 26px}
+.pie a{text-decoration:none;transition:color .2s}
+.pie a:hover{color:var(--blanco)}
+.pie nav{display:flex;gap:26px;flex-wrap:wrap}
+
+/* en 390px el CTA grande parte en dos lineas: se achica para que entre en una */
+@media(max-width:430px){.btn--xl{font-size:16.5px;padding:19px 22px;gap:9px}}
+
+@media(prefers-reduced-motion:no-preference){
+  .rv{opacity:0;transform:translateY(24px)}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav__in">
+    <a class="marca" href="#"><i></i>Emanuel Seery</a>
+    <nav class="nav__links">
+      <a href="#servicio">Qué hago</a>
+      <a href="#edicion">Edición</a>
+      <a href="#casos">Casos</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#contratar">Contratar</a>
+    </nav>
+    <a class="btn" href="https://wa.me/5493329476764?text=Hola!%20Te%20escribo%20por%20el%20contenido%20de%20mi%20negocio." target="_blank" rel="noopener">Escribime</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- ================= ATENCIÓN ================= -->
+  <section class="hero">
+    <div class="hero__luz" aria-hidden="true"></div>
+    <div class="hero__grano" aria-hidden="true"></div>
+    <div class="env">
+      <p class="kicker"><i></i>Negocios y marcas de San Pedro</p>
+      <h1 id="h1">No te falta alcance. Te falta <em>dónde caer</em>.</h1>
+      <p class="lead rv">
+        Bloqueás una jornada al mes para grabar y la cuenta te queda cargada todo el resto.
+        Vos ponés la cara y contestás los mensajes; de lo demás me encargo yo.
+      </p>
+      <div class="hero__cta rv">
+        <a class="btn btn--xl" href="https://wa.me/5493329476764?text=Hola!%20Te%20escribo%20por%20el%20contenido%20de%20mi%20negocio." target="_blank" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.83 2.41a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.13-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.16-.29.19-.53.06-.25-.12-1.05-.38-1.99-1.23-.74-.65-1.23-1.46-1.38-1.71-.14-.24-.01-.37.11-.5.11-.11.25-.29.37-.44.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.47c-.17 0-.43.06-.66.31-.23.24-.87.85-.87 2.07s.89 2.4 1.02 2.56c.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.47-.07 1.47-.6 1.68-1.19.21-.58.21-1.08.15-1.19-.06-.1-.23-.16-.48-.28Z"/></svg>
+          Escribime por WhatsApp
+        </a>
+        <a class="btn btn--linea btn--xl" href="#casos">Ver los casos</a>
+      </div>
+      <p class="hero__nota rv">Sin depender de la publicidad, sin contrato que no puedas cortar, y sin que tengas que aprender a editar.</p>
+    </div>
+  </section>
+
+  <!-- ================= MARQUESINA ================= -->
+  <div class="marq" aria-label="Trabajo entregado a los clientes">
+    <div class="marq__pista" id="marq"></div>
+  </div>
+
+  <!-- ================= EL PROBLEMA ================= -->
+  <section id="problema">
+    <div class="env">
+      <p class="pregunta rv">¿Esto me está pasando a mí?</p>
+      <h2 class="rv" style="max-width:16ch">Cuatro cosas que veo en casi todas las cuentas</h2>
+      <p class="lead rv medida" style="margin-top:20px">Pasá el mouse por cada una.</p>
+
+      <div class="acord rv">
+        <div class="hoja" tabindex="0">
+          <span class="hoja__n">Constancia</span>
+          <h3>Publicás cuando te acordás</h3>
+          <p>Tres videos en una semana, después veinte días en silencio. El algoritmo no premia el esfuerzo, premia la constancia.</p>
+        </div>
+        <div class="hoja hoja--fuego" tabindex="0">
+          <span class="hoja__n">El embudo</span>
+          <h3>Tenés vistas y no tenés consultas</h3>
+          <p>La pieza funciona, la gente mira, y ahí se termina. Falta el paso siguiente: qué hace el que quedó interesado.</p>
+        </div>
+        <div class="hoja" tabindex="0">
+          <span class="hoja__n">El mensaje</span>
+          <h3>Hablás de vos, no del que te va a llamar</h3>
+          <p>"Somos líderes", "años de experiencia", "calidad y confianza". Nada de eso responde la pregunta que el otro tiene en la cabeza.</p>
+        </div>
+        <div class="hoja" tabindex="0">
+          <span class="hoja__n">La marca</span>
+          <h3>Se ve hecho a las apuradas</h3>
+          <p>Sin criterio visual, cada pieza parece de una cuenta distinta. La marca no se construye: se diluye.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= LA SOLUCIÓN ================= -->
+  <section id="servicio" style="border-top:1px solid var(--linea)">
+    <div class="env">
+      <p class="pregunta rv">Bueno, ¿y vos qué hacés?</p>
+      <h2 class="rv" style="max-width:18ch">Me hago cargo de hasta el 90&nbsp;% de tu marketing.</h2>
+      <p class="lead rv medida" style="margin-top:22px">
+        Del lado tuyo quedan dos cosas: <strong>poner la cara y contestar los mensajes.</strong>
+        Todo lo demás lo hago yo, de punta a punta y sin tercerizar.
+      </p>
+
+      <div class="bento rv" style="margin-top:56px">
+        <div class="celda c2">
+          <span class="celda__n">Investigación</span>
+          <h3>Antes de escribir una línea</h3>
+          <p>Tu nicho, tu competencia directa, qué formatos ya funcionan en tu rubro y qué preguntas hace tu cliente antes de comprar.</p>
+        </div>
+        <div class="celda c2">
+          <span class="celda__n">Perfil</span>
+          <h3>Que la cuenta esté lista para recibir</h3>
+          <p>Bio, link, destacados y cómo se ve la grilla desde el celular de alguien que te acaba de descubrir.</p>
+        </div>
+        <div class="celda c2">
+          <span class="celda__n">Contenido</span>
+          <h3>Formatos, ángulos y guiones</h3>
+          <p>Pilares con su peso en la grilla, un banco de ángulos que dura meses, y cada pieza aprobada por vos antes de grabar.</p>
+        </div>
+        <div class="celda c4 celda--fuego">
+          <span class="celda__n">Producción</span>
+          <h3>Grabo, edito y publico yo</h3>
+          <p>Una jornada de grabación al mes. Reels, carruseles e historias editados y publicados en la fecha acordada. No delego la pieza que después tengo que defender, y por eso lo que hablamos en la reunión es exactamente lo que se graba.</p>
+        </div>
+        <div class="celda c2">
+          <span class="celda__n">Automatización</span>
+          <h3>Que no se pierda ninguna consulta</h3>
+          <p>Respuestas automáticas a comentarios y a mensajes de madrugada o de un domingo. La consulta que espera tres días ya se fue a otro lado.</p>
+        </div>
+        <div class="celda c6">
+          <span class="celda__n">Web</span>
+          <h3>Dónde recibir a la gente</h3>
+          <p>Cuando hace falta, la página propia: rápida, hecha a medida y pensada para que la consulta llegue a WhatsApp en un solo salto. La del estudio Sergio Rosa la diseñé y la programé yo: <a href="https://seerystudio.github.io/sergio-rosa-web/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-decoration-color:var(--naranja);text-underline-offset:3px">la podés abrir acá</a>. Y cuando suma, la pauta en Meta Ads también la armo y la manejo yo: anuncios que llevan directo a tu WhatsApp.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MUESTRA DE EDICIÓN =================
+       Los archivos van en portfolio/assets/reels/. Ver el LEEME de
+       esa carpeta: nombres, medidas y cómo sacar la portada.
+       Mientras no estén, cada tarjeta lo dice sola. -->
+  <section id="edicion" style="border-top:1px solid var(--linea)">
+    <div class="env">
+      <p class="pregunta rv">¿Pero sabés editar?</p>
+      <h2 class="rv" style="max-width:17ch">Así quedan las piezas cuando salen del editor.</h2>
+      <p class="lead rv medida" style="margin-top:22px">
+        Lo que se puede filmar se filma con un celular, en el mismo lugar donde trabaja el
+        cliente. Lo que no, se anima desde cero. No hace falta que te compres una cámara: lo
+        que cambia el resultado es lo que pasa después.
+      </p>
+
+      <div class="reels rv">
+        <figure class="reel" data-reel>
+          <div class="reel__marco">
+            <video class="reel__v" muted loop playsinline preload="none"
+                   poster="assets/reels/sr-estudio.jpg"
+                   data-src="assets/reels/sr-estudio.mp4"
+                   aria-label="Story de Sergio Rosa y Asociados, recorrido por el estudio"></video>
+            <span class="reel__dur">0:20</span>
+            <span class="reel__play" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>
+            </span>
+            <div class="reel__falta">
+              <b>Falta el archivo</b>
+              <code>assets/reels/sr-estudio.mp4</code>
+              <span>1080 × 1920</span>
+            </div>
+          </div>
+          <figcaption>
+            <b>Sergio Rosa y Asociados</b>
+            <span>Recorrido del estudio, filmado con celular</span>
+          </figcaption>
+        </figure>
+
+        <figure class="reel" data-reel>
+          <div class="reel__marco">
+            <video class="reel__v" muted loop playsinline preload="none"
+                   poster="assets/reels/solmi-nino.jpg"
+                   data-src="assets/reels/solmi-nino.mp4"
+                   aria-label="Anuncio animado de Solmi Impermeabilizantes sobre el fenómeno de El Niño"></video>
+            <span class="reel__dur">0:18</span>
+            <span class="reel__play" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>
+            </span>
+            <div class="reel__falta">
+              <b>Falta el archivo</b>
+              <code>assets/reels/solmi-nino.mp4</code>
+              <span>1080 × 1920</span>
+            </div>
+          </div>
+          <figcaption>
+            <b>Solmi Impermeabilizantes</b>
+            <span>Anuncio animado para Meta Ads</span>
+          </figcaption>
+        </figure>
+
+        <figure class="reel" data-reel>
+          <div class="reel__marco">
+            <video class="reel__v" muted loop playsinline preload="none"
+                   poster="assets/reels/solmi-chapa.jpg"
+                   data-src="assets/reels/solmi-chapa.mp4"
+                   aria-label="Video de Solmi Impermeabilizantes sobre techos de chapa, con antes y después"></video>
+            <span class="reel__dur">0:24</span>
+            <span class="reel__play" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>
+            </span>
+            <div class="reel__falta">
+              <b>Falta el archivo</b>
+              <code>assets/reels/solmi-chapa.mp4</code>
+              <span>1080 × 1920</span>
+            </div>
+          </div>
+          <figcaption>
+            <b>Solmi Impermeabilizantes</b>
+            <span>Techos de chapa, con el antes y después</span>
+          </figcaption>
+        </figure>
+
+        <figure class="reel" data-reel>
+          <div class="reel__marco">
+            <video class="reel__v" muted loop playsinline preload="none"
+                   poster="assets/reels/solmi-asociados-animaciones.jpg"
+                   data-src="assets/reels/solmi-asociados-animaciones.mp4"
+                   aria-label="Animaciones de apoyo para un reel de Solmi y Asociados"></video>
+            <span class="reel__dur">0:15</span>
+            <span class="reel__play" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>
+            </span>
+            <div class="reel__falta">
+              <b>Falta el archivo</b>
+              <code>assets/reels/solmi-asociados-animaciones.mp4</code>
+              <span>1080 × 1920</span>
+            </div>
+          </div>
+          <figcaption>
+            <b>Solmi y Asociados</b>
+            <span>Animaciones para tapar cortes de un reel a cámara</span>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="edicion rv">
+        <div>
+          <b>Subtítulos quemados</b>
+          <p>Te miran en el colectivo, en la cola del banco, al lado de alguien durmiendo. Sin texto en pantalla sos un tipo moviendo la boca.</p>
+        </div>
+        <div>
+          <b>Cortado al hueso</b>
+          <p>Entre que terminás una frase y arrancás la otra hay medio segundo de nada. Ese medio segundo, diez veces, es gente que se fue.</p>
+        </div>
+        <div>
+          <b>Mismo color en todas</b>
+          <p>Una toma es a las once de la mañana y la otra a las seis de la tarde. En tu feed tienen que parecer del mismo día.</p>
+        </div>
+        <div>
+          <b>El primer segundo, aparte</b>
+          <p>Al arranque lo edito solo, en loop, veinte veces seguidas. Si no me frena a mí, no te va a frenar a un desconocido.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= INTERÉS: CASOS ================= -->
+  <section id="casos" style="border-top:1px solid var(--linea);padding-bottom:110px">
+    <div class="env">
+      <p class="pregunta rv">¿Le funcionó a alguien?</p>
+      <h2 class="rv" style="max-width:19ch">Tres rubros que no se parecen en nada. El mismo método.</h2>
+      <p class="lead rv medida" style="margin-top:22px">
+        Una quinta con dos cabañas, dos estudios de abogados y una empresa que impermeabiliza
+        techos desde 1889. Casi todos arrancaron con la cuenta parada o sin cuenta. Acá van
+        completos: lo que encontré, lo que entregué y, donde ya hay, lo que se midió.
+      </p>
+    </div>
+
+    <div class="carr">
+      <div class="carr__pista" id="pista">
+
+        <article class="caso">
+          <div class="caso__top">
+            <span class="caso__chip">Hospedaje · 2 cabañas</span>
+            <span class="caso__ok">Autorizado por el cliente</span>
+          </div>
+          <div class="caso__nom">Quinta Los Álamos</div>
+          <p class="caso__sub">Dos cabañas en un mismo predio, a 170 km de Capital.</p>
+
+          <h4>Qué encontré</h4>
+          <p>Cinco meses sin publicar y la última pieza con un like. Pero un reel de diciembre
+          había hecho 50.800 vistas y 14 consultas de precio. El problema no era el alcance,
+          era el embudo: sin link en la bio, un feed casi todo "disponibilidad", y en cinco
+          meses ni una reseña pedida.</p>
+
+          <h4>Qué entregué</h4>
+          <div class="caso__entregado">
+            <div class="caso__e"><b>50</b><span>ideas de reel en banco</span></div>
+            <div class="caso__e"><b>40</b><span>guiones escritos</span></div>
+            <div class="caso__e"><b>5</b><span>pilares de contenido</span></div>
+          </div>
+          <p style="margin-top:20px">Más la auditoría del competidor directo del pueblo, dos
+          buyer personas con las objeciones ordenadas por fuerza, un formato repetible de 11
+          segundos calcado de sus dos mejores piezas, y el link directo a WhatsApp en la bio.</p>
+
+          <h4>En dos meses logramos</h4>
+          <div class="caso__entregado caso__entregado--logro">
+            <div class="caso__e"><b>+165</b><span>consultas</span></div>
+            <div class="caso__e"><b>+68.000</b><span>vistas en TikTok</span></div>
+            <div class="caso__e"><b>2</b><span>reservas por Airbnb</span></div>
+          </div>
+          <p style="margin-top:20px">De mediados de agosto al 8 de octubre, sin un peso de pauta.
+          Un solo video de TikTok, «De a ocho», trajo 73 consultas. Los números salen de los
+          reportes de cada mes; la semana del 3 al 10 de septiembre no se midió, así que el total
+          real es más alto.</p>
+
+          <div class="caso__aviso">
+            <b>Para que quede claro:</b> las 50.800 vistas de diciembre son de <em>antes</em> de que
+            yo entrara. Son el diagnóstico. Lo de «En dos meses» sí es resultado del trabajo.
+          </div>
+        </article>
+
+        <article class="caso">
+          <div class="caso__top">
+            <span class="caso__chip">Estudio jurídico · 30 años</span>
+            <span class="caso__ok">Autorizado por el cliente</span>
+          </div>
+          <div class="caso__nom">Sergio Rosa y Asociados</div>
+          <p class="caso__sub">Treinta años en San Pedro, con sede en Capital.</p>
+
+          <h4>Qué encontré</h4>
+          <p>Una cuenta dormida: un solo reel publicado en toda su historia, y todo el trabajo
+          entrando por boca a boca. No faltaban ideas, faltaba todo lo anterior a las ideas.
+          Y es un rubro regulado: una cifra o un plazo mal puesto no es un error de marketing,
+          es un problema.</p>
+
+          <h4>Qué entregué</h4>
+          <div class="caso__entregado">
+            <div class="caso__e"><b>50</b><span>ángulos de video</span></div>
+            <div class="caso__e"><b>25</b><span>guiones escritos</span></div>
+            <div class="caso__e"><b>48</b><span>frames de stories</span></div>
+          </div>
+          <p style="margin-top:20px">Más la investigación del nicho, el sistema visual completo
+          con plantillas propias de carrusel y stories, ocho formatos de video repetibles, los
+          destacados del perfil, y la web del estudio diseñada y programada de cero.</p>
+          <a class="caso__link" href="https://seerystudio.github.io/sergio-rosa-web/" target="_blank" rel="noopener">
+            Abrir la web del estudio
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          </a>
+
+          <div class="caso__aviso">
+            <b>Lo que me llevé de acá:</b> ninguna pieza sale con una cifra, un plazo o un dato
+            que el cliente no haya validado por escrito. Esa regla la aplico ahora en todos los
+            proyectos, sea el rubro que sea.
+          </div>
+        </article>
+
+        <article class="caso">
+          <div class="caso__top">
+            <span class="caso__chip">Impermeabilización · desde 1889</span>
+          </div>
+          <div class="caso__nom">Solmi Impermeabilizantes</div>
+          <p class="caso__sub">Impermeabilización elástica, sin molestias de obra. Seis generaciones de la misma familia en San Pedro.</p>
+
+          <h4>Qué encontré</h4>
+          <p>Una empresa familiar fundada en 1889 y sin ninguna presencia en redes. Trabajan para
+          industrias, hoteles y consorcios de todo el país, y nada de eso estaba a la vista del
+          que busca quién le arregle el techo.</p>
+
+          <h4>Qué entregué</h4>
+          <div class="caso__entregado">
+            <div class="caso__e"><b>9</b><span>carruseles diseñados</span></div>
+            <div class="caso__e"><b>2</b><span>videos animados</span></div>
+            <div class="caso__e"><b>2</b><span>públicos en Meta Ads</span></div>
+          </div>
+          <p style="margin-top:20px">Más el sistema visual en azul y blanco, las historias y las
+          portadas de destacadas, y la campaña de Meta Ads armada y manejada por mí: casas en el
+          corredor Zárate–Villa Constitución y empresas de las provincias cercanas, cada anuncio
+          llevando directo al WhatsApp.</p>
+
+          <div class="caso__aviso">
+            <b>Recién arranca:</b> la campaña salió el 1 de octubre. Los números van a estar acá
+            cuando haya un mes entero para leer.
+          </div>
+        </article>
+
+        <article class="caso">
+          <div class="caso__top">
+            <span class="caso__chip">Estudio jurídico</span>
+          </div>
+          <div class="caso__nom">Solmi &amp; Asociados</div>
+          <p class="caso__sub">Estudio jurídico en San Pedro. El acuerdo antes que el juicio.</p>
+
+          <h4>Qué encontré</h4>
+          <p>Una cuenta con pocos seguidores y un dato que ordenó todo: el único comentario de su
+          historia era alguien que quería armar un fideicomiso —el servicio de más valor del
+          estudio— y había quedado sin respuesta. No faltaba alcance: faltaba sistema.</p>
+
+          <h4>Qué entregué</h4>
+          <div class="caso__entregado">
+            <div class="caso__e"><b>55</b><span>ángulos de video</span></div>
+            <div class="caso__e"><b>13</b><span>guiones para grabar</span></div>
+            <div class="caso__e"><b>6</b><span>animaciones de apoyo</span></div>
+          </div>
+          <p style="margin-top:20px">Más la auditoría de la cuenta, el mensaje para recuperar esa
+          consulta, la bio, las historias y las destacadas, y un formulario para filtrar las
+          consultas antes de la primera reunión.</p>
+
+          <div class="caso__aviso">
+            <b>Rubro regulado, igual que el otro estudio:</b> nada sale publicado sin que el
+            estudio valide cada dato.
+          </div>
+        </article>
+
+        <article class="caso caso--cta">
+          <div class="caso__top">
+            <span class="caso__chip">Lugar disponible</span>
+          </div>
+          <div class="caso__nom">El próximo podés ser vos.</div>
+          <p class="caso__sub">Este lugar está vacío porque todavía no lo trabajé.</p>
+
+          <h4>Por qué son cuatro</h4>
+          <p>Son los clientes que tengo, y prefiero contarlos completos antes que mostrarte
+          una pared de logos que no significan nada. Cuando haya otro, va a estar acá con el
+          mismo nivel de detalle.</p>
+
+          <h4>Cómo empieza</h4>
+          <p>Me escribís, te mando el formulario y nos juntamos a mirar tu cuenta. Si te puedo
+          ayudar, te llevo una propuesta. Si no, te digo por dónde empezar y listo.</p>
+
+          <div class="caso__pie">
+            <a class="btn btn--claro" href="https://wa.me/5493329476764?text=Hola!%20Te%20escribo%20por%20el%20contenido%20de%20mi%20negocio." target="_blank" rel="noopener">Escribime por WhatsApp</a>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="env">
+        <div class="carr__ctrl">
+          <button class="carr__b" id="prev" aria-label="Caso anterior">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button class="carr__b" id="next" aria-label="Caso siguiente">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+          <span class="carr__ayuda">Arrastrá para ver todos</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DESEO: PROCESO CLAVADO ================= -->
+  <section id="proceso" style="border-top:1px solid var(--linea)">
+    <div class="env">
+      <div class="pin" id="pin">
+        <div class="pin__col" id="pinCol">
+          <p class="pregunta rv">¿Cómo sería trabajar juntos?</p>
+      <h2 class="rv" style="max-width:12ch">Siete pasos, y sabés en cuál estás siempre.</h2>
+          <p class="lead rv" style="margin-top:22px;max-width:38ch">
+            Nada de "según el caso". Cada mes se repite el mismo circuito, y a fin de mes
+            te llega el reporte de qué pasó.
+          </p>
+          <a class="btn rv" style="margin-top:32px" href="https://wa.me/5493329476764?text=Hola!%20Te%20escribo%20por%20el%20contenido%20de%20mi%20negocio." target="_blank" rel="noopener">Empezar por el paso 01</a>
+        </div>
+
+        <div class="pin__pasos">
+          <div class="paso rv"><div class="paso__n">01</div><div>
+            <h3>Te mando el formulario</h3>
+            <p>Preguntas concretas sobre tu negocio, tu cliente y lo que ya probaste. Te lleva quince minutos y me ahorra media reunión.</p></div></div>
+          <div class="paso rv"><div class="paso__n">02</div><div>
+            <h3>Nos reunimos</h3>
+            <p>Miramos juntos tu cuenta y la de tu competencia. Si puedo ayudarte, te lo digo. Si no, también.</p></div></div>
+          <div class="paso rv"><div class="paso__n">03</div><div>
+            <h3>Te llevo la propuesta</h3>
+            <p>Escrita, con el alcance y los entregables cerrados. Sin letra chica y sin "según el caso".</p></div></div>
+          <div class="paso rv"><div class="paso__n">04</div><div>
+            <h3>Fijamos el día de grabación</h3>
+            <p>Una fecha del mes, bloqueada de antemano. Todo el contenido del mes sale de ahí.</p></div></div>
+          <div class="paso rv"><div class="paso__n">05</div><div>
+            <h3>Escribo los guiones y los revisás</h3>
+            <p>Te llegan antes de la grabación. Nada se graba sin tu OK, y en rubros regulados nada sale con un dato que no hayas validado.</p></div></div>
+          <div class="paso rv"><div class="paso__n">06</div><div>
+            <h3>Grabamos</h3>
+            <p>Una jornada. Llego con el guion, el orden de los planos y la lista de tomas. Repetimos las veces que haga falta.</p></div></div>
+          <div class="paso rv"><div class="paso__n">07</div><div>
+            <h3>Edito, publico y respondo</h3>
+            <p>Las piezas salen en la fecha acordada. Contesto comentarios y mensajes, y a fin de mes te llega el reporte.</p></div></div>
+        </div>
+      </div>
+
+      <div class="reglas rv">
+        <div class="regla">
+          <p class="regla__t"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1 3 5v6c0 5.6 3.8 10.7 9 12 5.2-1.3 9-6.4 9-12V5l-9-4Z"/></svg>La cuenta es tuya</p>
+          <p>Yo la opero, no la poseo. Los accesos son tuyos desde el primer día y quedan tuyos el día que te vayas.</p>
+        </div>
+        <div class="regla">
+          <p class="regla__t"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 2 20h20L12 2Zm0 5 6 11H6l6-11Z"/></svg>Nada de relleno</p>
+          <p>Si una pieza no sale de un pilar y no tiene un porqué, no se graba. Publicar por publicar no es constancia.</p>
+        </div>
+        <div class="regla">
+          <p class="regla__t"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 3h16v2H4V3Zm0 4h16v14H4V7Zm3 3v8h2v-8H7Zm4 3v5h2v-5h-2Zm4-1v6h2v-6h-2Z"/></svg>Reporte a fin de mes</p>
+          <p>Qué se publicó, qué funcionó, qué no, y qué cambia el mes que viene. Sin maquillaje.</p>
+        </div>
+        <div class="regla">
+          <p class="regla__t"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9h-2a7 7 0 1 1-7-7V3Z"/><path d="M13 3v8h8a9 9 0 0 0-8-8Z"/></svg>Orgánico primero</p>
+          <p>No crecés porque pagaste: crecés porque el contenido se sostiene solo. Cuando la pauta suma —una cuenta que arranca de cero, una temporada, un servicio puntual— la armo y la manejo yo en Meta Ads. Nunca como reemplazo del contenido.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PARA QUIÉN ================= -->
+  <section id="paraquien" style="border-top:1px solid var(--linea)">
+    <div class="env">
+      <p class="pregunta rv">¿Yo entro en esto?</p>
+      <h2 class="rv" style="max-width:17ch">Trabajo con el que está decidido, no con el que quiere probar.</h2>
+      <p class="lead rv medida" style="margin:22px 0 54px">
+        Prefiero decírtelo acá y no en la reunión. Esto funciona cuando el de enfrente está
+        metido de verdad; con el que quiere tantear un mes a ver qué pasa, no funciona para
+        ninguno de los dos.
+      </p>
+
+      <div class="filtro rv">
+        <div class="filtro__c filtro__c--si">
+          <h3>Es para vos si…</h3>
+          <ul>
+            <li>Tenés un negocio que ya funciona y querés que más gente lo encuentre.</li>
+            <li>Podés bloquear una jornada al mes para grabar, y sostenerla.</li>
+            <li>Estás dispuesto a leer y aprobar los guiones antes de que se grabe nada.</li>
+            <li>Contestás los mensajes que entran. Es la mitad del resultado y no la puedo hacer yo.</li>
+            <li>Entendés que los primeros tres meses son de construcción, no de cosecha.</li>
+            <li>Querés delegar el marketing, no supervisarlo todos los días.</li>
+          </ul>
+        </div>
+        <div class="filtro__c filtro__c--no">
+          <h3>No es para vos si…</h3>
+          <ul>
+            <li>Querés probar un mes a ver qué pasa.</li>
+            <li>Esperás resultados en tres semanas.</li>
+            <li>No podés comprometer un día al mes para la grabación.</li>
+            <li>Buscás a alguien que suba posteos sin preguntar nada.</li>
+            <li>Querés que te garanticen números.</li>
+            <li>El precio es lo primero y lo único que vas a mirar.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PLANES ================= -->
+  <section id="contratar" style="border-top:1px solid var(--linea)">
+    <div class="env">
+      <p class="pregunta rv">¿Cómo se contrata?</p>
+      <h2 class="rv" style="max-width:16ch">Dos cosas separadas, y por una buena razón.</h2>
+      <p class="lead rv medida" style="margin:22px 0 54px">
+        Casi todo el trabajo está al principio. Meterlo adentro de un abono mensual significaría
+        entregarte medio año de contenido escrito al precio de un mes.
+      </p>
+
+      <div class="planes rv">
+        <article class="plan plan--destacado">
+          <span class="plan__t">Un solo pago</span>
+          <h3>El sistema inicial</h3>
+          <p>Investigación del nicho, buyer personas, pilares de contenido, banco de ángulos,
+          guiones y sistema visual. Es el plano completo de tu comunicación: de dónde sale
+          cada pieza y por qué.</p>
+          <p class="plan__clave">Es tuyo: lo produzcas conmigo o no.</p>
+        </article>
+        <article class="plan">
+          <span class="plan__t">Abono mensual</span>
+          <h3>La producción</h3>
+          <p>Una jornada de grabación por mes, edición, publicación, respuesta a comentarios y
+          mensajes, y el reporte a fin de mes.</p>
+          <p class="plan__clave">Mínimo tres meses: es lo que cubre el banco de contenido y lo mínimo para medir algo.</p>
+        </article>
+      </div>
+
+      <p class="lead rv" style="margin-top:34px;max-width:66ch">
+        El precio no está en la página a propósito. Se habla en la reunión, cuando ya vi tu
+        cuenta y sé qué te hace falta de verdad.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section id="faq" style="border-top:1px solid var(--linea)">
+    <div class="env env--angosto">
+      <p class="pregunta rv">Me queda una duda</p>
+      <h2 class="rv" style="max-width:14ch;margin-bottom:50px">Lo que me preguntan siempre</h2>
+      <div class="faq rv">
+        <details>
+          <summary>¿Tengo que salir yo en cámara?</summary>
+          <p>No siempre. Buena parte del contenido que mejor rinde no tiene a nadie hablando: un plano del lugar, del producto, de las manos trabajando. Cuando hace falta que aparezcas, llego con el guion escrito y grabamos las veces que sea necesario hasta que salga bien.</p>
+        </details>
+        <details>
+          <summary>¿Cuánto tarda en verse algo?</summary>
+          <p>Tres meses para tener con qué medir. En el primer mes vas a ver movimiento —más alcance, algunos comentarios—, pero sacar conclusiones a los veinte días es tirar una moneda. Por eso el sistema se arma pensado en tres meses y no en tres semanas.</p>
+        </details>
+        <details>
+          <summary>¿Y si un video no funciona?</summary>
+          <p>Va a pasar, y no es un problema: ninguna pieza garantiza nada por sí sola. Por eso se trabaja por tandas. Se mira qué pasó, se ajusta el gancho o el formato y se vuelve a intentar con lo aprendido. Cada pieza publicada deja información para la siguiente — eso es exactamente lo que no te deja publicar al azar.</p>
+        </details>
+        <details>
+          <summary>¿Y si no tengo nada armado?</summary>
+          <p>Mejor. Ese es justamente el trabajo. Casi todos mis clientes arrancaron con la cuenta parada o sin cuenta: la quinta llevaba cinco meses sin publicar, el estudio Sergio Rosa tenía un solo video en toda su historia y Solmi Impermeabilizantes no tenía redes. No hace falta que traigas nada más que el negocio funcionando.</p>
+        </details>
+        <details>
+          <summary>¿Me garantizás resultados?</summary>
+          <p>No, y desconfiá del que te los garantice. Lo que sí te garantizo es el trabajo: la investigación, el sistema escrito, las piezas producidas y la publicación en la fecha acordada. Los resultados dependen también de cosas que no manejo yo, empezando por que contestes los mensajes que entren.</p>
+        </details>
+        <details>
+          <summary>¿Cuánto tiempo me lleva a mí?</summary>
+          <p>Una jornada de grabación al mes, un rato antes para leer y aprobar los guiones, y contestar las consultas que entren. Nada más. Si te lleva más que eso, algo estoy haciendo mal.</p>
+        </details>
+        <details>
+          <summary>¿Trabajás solo con Instagram?</summary>
+          <p>Es el canal principal, pero el mismo sistema alimenta TikTok, la ficha de Google y los canales propios de tu rubro.</p>
+        </details>
+        <details>
+          <summary>¿Hacés pauta paga?</summary>
+          <p>Sí, en Meta Ads, y la armo y la manejo yo: los públicos, los anuncios y el seguimiento día por día, con cada anuncio llevando directo a tu WhatsApp. Pero el sistema no depende de la pauta para sostenerse: la base es orgánica, y la pauta entra cuando suma —una cuenta que arranca de cero, una temporada, un servicio que querés empujar—, no como reemplazo del contenido.</p>
+        </details>
+        <details>
+          <summary>¿Trabajás con gente de afuera de San Pedro?</summary>
+          <p>La jornada de grabación es presencial, así que trabajo en San Pedro y la zona. Si estás más lejos, escribíme igual y vemos: el sistema inicial se puede hacer a distancia.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= BIO ================= -->
+  <section id="bio" style="border-top:1px solid var(--linea)">
+    <div class="env">
+      <div class="bio rv">
+        <img class="bio__foto" src="assets/retrato.jpg" alt="Emanuel Seery" loading="lazy">
+        <div>
+          <p class="pregunta">¿Y vos quién sos?</p>
+          <h2 style="font-size:clamp(30px,3.6vw,48px);margin-bottom:26px">Emanuel Seery</h2>
+          <p class="lead">
+            Llegué a esto de casualidad y me quedé por convicción. En marzo de 2025 me metí en un
+            curso de community manager sin saber bien qué esperar, y terminé haciendo también
+            publicidad avanzada y growth marketing hasta completar la licenciatura entera.
+          </p>
+          <p class="lead" style="margin-top:18px">
+            <strong>Lo que traigo no son veinte años de oficio: es método.</strong> Cada cliente
+            arranca con una investigación de su nicho y termina con un sistema escrito del que
+            sale cada pieza. Me interesa una sola métrica: las consultas que terminan en venta.
+            Seguidores y likes son lindos, pero no se depositan.
+          </p>
+          <p class="cred">
+            <b>Formación</b>
+            Community Manager, Publicidad Avanzada y Growth Marketing — Coderhouse (licenciatura completa).<br>
+            Marketing Digital — UTN, cursando el segundo cuatrimestre.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ACCIÓN ================= -->
+  <section class="cierre" id="contacto">
+    <div class="cierre__luz" aria-hidden="true"></div>
+    <div class="env">
+      <p class="pregunta rv" style="margin-inline:auto;display:inline-block">Listo, ¿cómo empiezo?</p>
+      <h2 class="rv">Contame de tu negocio.</h2>
+      <p class="lead rv">
+        Me escribís, te mando el formulario y nos juntamos a mirar tu cuenta.
+        <strong>Si te puedo ayudar, te llevo una propuesta. Si no, te digo por dónde empezar
+        y listo.</strong> La charla no te cuesta nada en ninguno de los dos casos.
+      </p>
+      <a class="btn btn--xl rv" href="https://wa.me/5493329476764?text=Hola!%20Te%20escribo%20por%20el%20contenido%20de%20mi%20negocio." target="_blank" rel="noopener">
+        <svg width="21" height="21" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.25-8.23 2.2 0 4.27.86 5.83 2.41a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.13-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.16-.29.19-.53.06-.25-.12-1.05-.38-1.99-1.23-.74-.65-1.23-1.46-1.38-1.71-.14-.24-.01-.37.11-.5.11-.11.25-.29.37-.44.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.47c-.17 0-.43.06-.66.31-.23.24-.87.85-.87 2.07s.89 2.4 1.02 2.56c.12.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.47-.07 1.47-.6 1.68-1.19.21-.58.21-1.08.15-1.19-.06-.1-.23-.16-.48-.28Z"/></svg>
+        Escribime por WhatsApp
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer class="pie">
+  <div class="pie__in">
+    <div>© <span id="anio">2026</span> Emanuel Seery · Contenido para negocios · San Pedro</div>
+    <nav>
+      <a href="https://wa.me/5493329476764" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://instagram.com/syemanuel_" target="_blank" rel="noopener">Instagram</a>
+      <a href="mailto:emanuelseery3@gmail.com">Mail</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+document.getElementById('anio').textContent = new Date().getFullYear();
+
+/* ---------- marquesina: trabajo entregado, no resultados ---------- */
+var ENTREGADO = [
+  ['155','ángulos de contenido escritos'],
+  ['65','guiones terminados'],
+  ['48','frames de stories'],
+  ['8','formatos de video repetibles'],
+  ['5','pilares por marca'],
+  ['1','web diseñada y programada'],
+  ['1','campaña de Meta Ads a WhatsApp'],
+  ['3','rubros distintos']
+];
+(function(){
+  var pista = document.getElementById('marq'), html = '';
+  ENTREGADO.forEach(function(x){
+    html += '<span class="marq__i"><b>'+x[0]+'</b><span>'+x[1]+'</span></span><span class="marq__p"></span>';
+  });
+  // dos copias: la segunda hace que el bucle no tenga corte visible
+  pista.innerHTML = '<div class="marq__g">'+html+'</div><div class="marq__g" aria-hidden="true">'+html+'</div>';
+})();
+
+var quieto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---------- muestra de edición ----------
+   El video no se descarga hasta que la tarjeta está por entrar en
+   pantalla: son cuatro archivos pesados y el público entra con datos.
+   Si el archivo no existe todavía, la tarjeta lo dice y no rompe nada. */
+(function(){
+  var reels = Array.prototype.slice.call(document.querySelectorAll('[data-reel]'));
+  if (!reels.length) return;
+  var dedo = window.matchMedia('(hover: none)').matches;
+
+  function cargar(fig){
+    var v = fig.querySelector('.reel__v');
+    if (v.dataset.listo) return;
+    v.dataset.listo = '1';
+    v.addEventListener('error', function(){ fig.classList.add('sin-archivo'); }, {once:true});
+    v.addEventListener('loadedmetadata', function(){ fig.classList.remove('sin-archivo'); }, {once:true});
+    // con preload="none" el navegador no pide nada y nunca sabríamos si el
+    // archivo existe: pasa a metadata (unos pocos KB) y se fuerza la carga
+    v.preload = 'metadata';
+    v.src = v.dataset.src;
+    v.load();
+  }
+  function correr(fig){
+    var v = fig.querySelector('.reel__v');
+    if (fig.classList.contains('sin-archivo')) return;
+    var p = v.play();
+    if (p && p.catch) p.catch(function(){});
+    fig.classList.add('corriendo');
+  }
+  function frenar(fig){
+    var v = fig.querySelector('.reel__v');
+    v.pause(); v.currentTime = 0;
+    fig.classList.remove('corriendo');
+  }
+
+  var obs = new IntersectionObserver(function(entradas){
+    entradas.forEach(function(e){
+      if (e.isIntersecting){
+        cargar(e.target);
+        // en el celular no hay hover: la pieza que está a la vista corre sola
+        if (dedo && !quieto) correr(e.target);
+      } else if (dedo){
+        frenar(e.target);
+      }
+    });
+  }, {rootMargin:'220px 0px', threshold:.25});
+
+  reels.forEach(function(fig){
+    obs.observe(fig);
+    if (!dedo){
+      fig.addEventListener('mouseenter', function(){ cargar(fig); correr(fig); });
+      fig.addEventListener('mouseleave', function(){ frenar(fig); });
+    }
+  });
+})();
+
+/* ---------- estado sin animación ----------
+   Mismo resultado final que con GSAP, sin depender de que haya cargado:
+   lo usan tanto el visitante con reduced-motion como el que se queda sin
+   GSAP por una falla de red. Idempotente: no rompe nada llamarla dos veces. */
+function estatico(){
+  Array.prototype.forEach.call(document.querySelectorAll('.rv'), function(el){
+    el.style.opacity = 1; el.style.transform = 'none';
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('.lectura__b i'), function(el,i){
+    el.style.transform = 'scaleX(' + [0.09,0.38,1][i] + ')';
+  });
+  var carr = document.querySelector('.carr__pista');
+  if (carr) carr.style.overflowX = 'auto';
+}
+
+function encender(){
+  if (!window.gsap) { estatico(); return; }
+  gsap.registerPlugin(ScrollTrigger, SplitText, Draggable, InertiaPlugin);
+
+  /* ---------- el titular entra por líneas, enmascarado ---------- */
+  document.fonts.ready.then(function(){
+    SplitText.create('#h1', {
+      type:'lines', mask:'lines', autoSplit:true, linesClass:'l',
+      onSplit:function(self){
+        return gsap.from(self.lines, {
+          yPercent:118, duration:1.05, stagger:.11, ease:'expo.out', delay:.15
+        });
+      }
+    });
+    ScrollTrigger.refresh();
+  });
+
+  /* ---------- entradas ---------- */
+/* Si se entra directo por un ancla (…#casos, …#contacto) o el navegador
+     restaura el scroll, lo que queda en pantalla nunca "entra" al viewport:
+     ScrollTrigger no dispara onEnter y esa sección se vería vacía. El salto
+     al ancla además es suave, así que hay que barrer mientras dura. Solo se
+     activa en ese caso, para no pisar la animación de entrada normal. */
+  if (location.hash || window.scrollY > 0) {
+    var hastaCuando = Date.now() + 4000, pendiente = false;
+    var barrer = function(){
+      pendiente = false;
+      var limite = window.innerHeight * 0.92;
+      gsap.utils.toArray('.rv').forEach(function(el){
+        if (el.getBoundingClientRect().top < limite) gsap.set(el, {opacity:1, y:0});
+      });
+      if (Date.now() > hastaCuando) window.removeEventListener('scroll', alScroll);
+    };
+    var alScroll = function(){
+      if (!pendiente){ pendiente = true; requestAnimationFrame(barrer); }
+    };
+    window.addEventListener('scroll', alScroll, {passive:true});
+    document.fonts.ready.then(function(){ ScrollTrigger.refresh(); barrer(); });
+    setTimeout(barrer, 1500);
+  }
+
+  ScrollTrigger.batch('.rv', {
+    start:'top 88%',
+    onEnter:function(b){ gsap.to(b,{opacity:1,y:0,duration:.95,stagger:.08,ease:'expo.out',overwrite:true}); }
+  });
+
+  /* ---------- marquesina infinita ---------- */
+  (function(){
+    var g = document.querySelector('.marq__g');
+    gsap.to('.marq__pista', {
+      x:function(){ return -g.offsetWidth; },
+      duration:26, ease:'none', repeat:-1
+    });
+  })();
+
+  /* ---------- carrusel de casos: arrastrable + flechas ---------- */
+  (function(){
+    var pista = document.getElementById('pista');
+    var prev = document.getElementById('prev'), next = document.getElementById('next');
+    var i = 0;
+    function limite(){ return Math.min(0, window.innerWidth - pista.scrollWidth - 26); }
+    function tarjeta(){ var c = pista.querySelector('.caso'); return c.offsetWidth + 22; }
+    function ir(n){
+      i = Math.max(0, Math.min(n, pista.children.length - 1));
+      var x = Math.max(limite(), -i * tarjeta());
+      gsap.to(pista, {x:x, duration:.75, ease:'expo.out', onUpdate:estado});
+    }
+    function estado(){
+      var x = gsap.getProperty(pista,'x');
+      prev.disabled = x >= -2;
+      next.disabled = x <= limite() + 2;
+    }
+    var d = Draggable.create(pista, {
+      type:'x', inertia:true, edgeResistance:.9, dragResistance:.05,
+      bounds:{minX:limite(), maxX:0},
+      onPress:function(){ pista.classList.add('arrastrando'); },
+      onRelease:function(){ pista.classList.remove('arrastrando'); },
+      onDrag:estado, onThrowUpdate:estado
+    })[0];
+    prev.addEventListener('click', function(){ ir(i-1); });
+    next.addEventListener('click', function(){ ir(i+1); });
+    window.addEventListener('resize', function(){
+      d.applyBounds({minX:limite(), maxX:0}); estado();
+    });
+    estado();
+  })();
+
+  /* ---------- el título del proceso queda clavado ---------- */
+  ScrollTrigger.matchMedia ? null : null;
+  gsap.matchMedia().add('(min-width: 981px)', function(){
+    ScrollTrigger.create({
+      trigger:'#pin', start:'top 130px', end:'bottom bottom',
+      pin:'#pinCol', pinSpacing:false
+    });
+  });
+}
+
+/* ---------- GSAP en diferido ----------
+   No hace falta para el primer pintado: el HTML y el CSS ya resuelven el
+   layout, y con reduced-motion el propio CSS deja .rv visible sin JS. Las
+   cinco librerías (168 KB) se piden recién acá, con `async=false` para que
+   el navegador las baje en paralelo pero las ejecute en el orden en que
+   están escritas —ScrollTrigger necesita que gsap ya exista—. Si una falla
+   (red, ruta), `estatico()` deja la página legible igual: nunca se rompe
+   por esto. */
+if (quieto) {
+  estatico();
+} else {
+  (function(){
+    var libs = ['lib/gsap.min.js','lib/ScrollTrigger.min.js','lib/SplitText.min.js','lib/Draggable.min.js','lib/InertiaPlugin.min.js'];
+    var restantes = libs.length;
+    function listo(){
+      restantes--;
+      if (restantes > 0) return;
+      // se pide gsap.registerPlugin recién en encender(): si alguna de las
+      // cinco no llegó, mejor el estado sin animación que un registerPlugin
+      // que explota por una referencia indefinida.
+      var completo = window.gsap && window.ScrollTrigger && window.SplitText
+        && window.Draggable && window.InertiaPlugin;
+      completo ? encender() : estatico();
+    }
+    libs.forEach(function(src){
+      var s = document.createElement('script');
+      s.src = src; s.async = false;
+      s.onload = listo;
+      s.onerror = listo;
+      document.head.appendChild(s);
+    });
+  })();
+}
+</script>
+</body>
+</html>
