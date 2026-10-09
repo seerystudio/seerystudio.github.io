@@ -282,9 +282,8 @@ strong{font-weight:700;color:#fff}
    y se reproducen al pasar el mouse; en el celular, cuando entran en
    pantalla. Sin sonido y en bucle: es una muestra, no un reproductor.
    Si el archivo no está, la tarjeta lo dice en vez de romperse. */
-.reels{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:56px}
-@media(max-width:1040px){.reels{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:560px){.reels{grid-template-columns:1fr;max-width:340px;margin-inline:auto}}
+.reels{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:56px;max-width:980px}
+@media(max-width:760px){.reels{grid-template-columns:1fr;max-width:340px;margin-inline:auto}}
 .reel{margin:0}
 .reel__marco{
   position:relative;aspect-ratio:9/16;border-radius:20px;overflow:hidden;
@@ -678,9 +677,76 @@ strong{font-weight:700;color:#fff}
         que cambia el resultado es lo que pasa después.
       </p>
 
-      <!-- ⬜ Los videos de la muestra los pasa el usuario (pedido del 2026-10-09).
-           Cuando lleguen: volver a poner acá el bloque .reels con una
-           <figure class="reel" data-reel> por pieza. El JS ya está. -->
+      <!-- Videos que pasó el usuario por Drive el 2026-10-09, comprimidos a 720×1280
+           sin audio. Se reproducen mudos al pasar el mouse: por eso van los que
+           tienen subtítulos quemados. -->
+      <div class="reels rv">
+        <figure class="reel" data-reel>
+          <div class="reel__marco">
+            <video class="reel__v" muted loop playsinline preload="none"
+                   poster="assets/reels/alamos-recorrido.jpg"
+                   data-src="assets/reels/alamos-recorrido.mp4"
+                   aria-label="Reel de Quinta Los Álamos, recorrido de la quinta a cámara"></video>
+            <span class="reel__dur">0:32</span>
+            <span class="reel__play" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>
+            </span>
+            <div class="reel__falta">
+              <b>Falta el archivo</b>
+              <code>assets/reels/alamos-recorrido.mp4</code>
+              <span>1080 × 1920</span>
+            </div>
+          </div>
+          <figcaption>
+            <b>Quinta Los Álamos</b>
+            <span>Recorrido a cámara, con subtítulos</span>
+          </figcaption>
+        </figure>
+
+        <figure class="reel" data-reel>
+          <div class="reel__marco">
+            <video class="reel__v" muted loop playsinline preload="none"
+                   poster="assets/reels/sr-en-san-pedro.jpg"
+                   data-src="assets/reels/sr-en-san-pedro.mp4"
+                   aria-label="Reel de Sergio Rosa y Asociados filmado en la calle, en San Pedro"></video>
+            <span class="reel__dur">0:29</span>
+            <span class="reel__play" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>
+            </span>
+            <div class="reel__falta">
+              <b>Falta el archivo</b>
+              <code>assets/reels/sr-en-san-pedro.mp4</code>
+              <span>1080 × 1920</span>
+            </div>
+          </div>
+          <figcaption>
+            <b>Sergio Rosa y Asociados</b>
+            <span>A cámara en la calle, en San Pedro</span>
+          </figcaption>
+        </figure>
+
+        <figure class="reel" data-reel>
+          <div class="reel__marco">
+            <video class="reel__v" muted loop playsinline preload="none"
+                   poster="assets/reels/solmi-asociados-por-que.jpg"
+                   data-src="assets/reels/solmi-asociados-por-que.mp4"
+                   aria-label="Reel de Solmi y Asociados, por qué elegir al estudio, con animaciones"></video>
+            <span class="reel__dur">0:24</span>
+            <span class="reel__play" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg>
+            </span>
+            <div class="reel__falta">
+              <b>Falta el archivo</b>
+              <code>assets/reels/solmi-asociados-por-que.mp4</code>
+              <span>1080 × 1920</span>
+            </div>
+          </div>
+          <figcaption>
+            <b>Solmi &amp; Asociados</b>
+            <span>A cámara, con animaciones propias</span>
+          </figcaption>
+        </figure>
+      </div>
 
       <div class="edicion rv">
         <div>
